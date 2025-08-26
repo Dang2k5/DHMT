@@ -1,0 +1,409 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\robot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\robot\\robot1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\robot\\robot1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\cylinder\\cylinder1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\cylinder\\cylinder1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\objects\\cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\objects\\cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\robot\\robot2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\robot\\robot2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\core\\lighting.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\core\\lighting.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\table.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\table.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\cylinder\\cylinder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\cylinder\\cylinder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\cube\\cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\cube\\cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\objects\\cabinet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\objects\\cabinet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\core\\ui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\core\\ui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\core\\ui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\core\\ui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\objects\\Robot2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\objects\\Robot2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\RobotStore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\RobotStore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\hemisphere\\hemisphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\hemisphere\\hemisphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\sphere\\sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\sphere\\sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\objects\\sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\objects\\sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\objects\\hemisphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\objects\\hemisphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\objects\\cylinder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\objects\\cylinder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\plane\\plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\plane\\plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\core\\openGL.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\core\\openGL.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\objects\\planeStore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\objects\\planeStore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|D:\\robot\\robot\\include\\objects\\cylinder1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20D06E83-CA15-40B8-A3EF-94C8745FCBF0}|robot\\robot.vcxproj|solutionrelative:robot\\include\\objects\\cylinder1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 24,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "cylinder1.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\objects\\cylinder1.h",
+              "RelativeDocumentMoniker": "robot\\include\\objects\\cylinder1.h",
+              "ToolTip": "D:\\robot\\robot\\include\\objects\\cylinder1.h",
+              "RelativeToolTip": "robot\\include\\objects\\cylinder1.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-23T17:21:18.126Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "cube.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\objects\\cube.h",
+              "RelativeDocumentMoniker": "robot\\include\\objects\\cube.h",
+              "ToolTip": "D:\\robot\\robot\\include\\objects\\cube.h",
+              "RelativeToolTip": "robot\\include\\objects\\cube.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-26T13:51:34.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "lighting.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\core\\lighting.cpp",
+              "RelativeDocumentMoniker": "robot\\core\\lighting.cpp",
+              "ToolTip": "D:\\robot\\robot\\core\\lighting.cpp",
+              "RelativeToolTip": "robot\\core\\lighting.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-26T13:42:54.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "table.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\table.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\table.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\table.cpp",
+              "RelativeToolTip": "robot\\objects\\table.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-26T13:37:04.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "cabinet.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\objects\\cabinet.h",
+              "RelativeDocumentMoniker": "robot\\include\\objects\\cabinet.h",
+              "ToolTip": "D:\\robot\\robot\\include\\objects\\cabinet.h",
+              "RelativeToolTip": "robot\\include\\objects\\cabinet.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-26T13:34:02.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ui.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\core\\ui.h",
+              "RelativeDocumentMoniker": "robot\\include\\core\\ui.h",
+              "ToolTip": "D:\\robot\\robot\\include\\core\\ui.h",
+              "RelativeToolTip": "robot\\include\\core\\ui.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-26T13:33:09.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ui.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\core\\ui.cpp",
+              "RelativeDocumentMoniker": "robot\\core\\ui.cpp",
+              "ToolTip": "D:\\robot\\robot\\core\\ui.cpp",
+              "RelativeToolTip": "robot\\core\\ui.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-26T13:33:06.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "sphere.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\sphere\\sphere.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\sphere\\sphere.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\sphere\\sphere.cpp",
+              "RelativeToolTip": "robot\\objects\\sphere\\sphere.cpp",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAqwFkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-25T14:59:06.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "cylinder.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\objects\\cylinder.h",
+              "RelativeDocumentMoniker": "robot\\include\\objects\\cylinder.h",
+              "ToolTip": "D:\\robot\\robot\\include\\objects\\cylinder.h",
+              "RelativeToolTip": "robot\\include\\objects\\cylinder.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-25T14:56:10.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "sphere.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\objects\\sphere.h",
+              "RelativeDocumentMoniker": "robot\\include\\objects\\sphere.h",
+              "ToolTip": "D:\\robot\\robot\\include\\objects\\sphere.h",
+              "RelativeToolTip": "robot\\include\\objects\\sphere.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-25T14:56:04.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "hemisphere.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\hemisphere\\hemisphere.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\hemisphere\\hemisphere.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\hemisphere\\hemisphere.cpp",
+              "RelativeToolTip": "robot\\objects\\hemisphere\\hemisphere.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-25T14:52:14.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "hemisphere.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\objects\\hemisphere.h",
+              "RelativeDocumentMoniker": "robot\\include\\objects\\hemisphere.h",
+              "ToolTip": "D:\\robot\\robot\\include\\objects\\hemisphere.h",
+              "RelativeToolTip": "robot\\include\\objects\\hemisphere.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-25T14:51:50.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "robot2.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\objects\\robot2.h",
+              "RelativeDocumentMoniker": "robot\\include\\objects\\robot2.h",
+              "ToolTip": "D:\\robot\\robot\\include\\objects\\robot2.h",
+              "RelativeToolTip": "robot\\include\\objects\\robot2.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-25T14:51:38.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "robot2.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\robot\\robot2.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\robot\\robot2.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\robot\\robot2.cpp",
+              "RelativeToolTip": "robot\\objects\\robot\\robot2.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-25T14:47:27.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "planeStore.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\planeStore.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\planeStore.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\planeStore.cpp",
+              "RelativeToolTip": "robot\\objects\\planeStore.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-25T09:49:04.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "plane.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\plane\\plane.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\plane\\plane.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\plane\\plane.cpp",
+              "RelativeToolTip": "robot\\objects\\plane\\plane.cpp",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-25T09:33:11.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RobotStore.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\RobotStore.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\RobotStore.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\RobotStore.cpp",
+              "RelativeToolTip": "robot\\objects\\RobotStore.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-25T08:50:06.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "robot1.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\robot\\robot1.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\robot\\robot1.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\robot\\robot1.cpp",
+              "RelativeToolTip": "robot\\objects\\robot\\robot1.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-23T18:00:28.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "openGL.h",
+              "DocumentMoniker": "D:\\robot\\robot\\include\\core\\openGL.h",
+              "RelativeDocumentMoniker": "robot\\include\\core\\openGL.h",
+              "ToolTip": "D:\\robot\\robot\\include\\core\\openGL.h",
+              "RelativeToolTip": "robot\\include\\core\\openGL.h",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-23T16:13:58.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cylinder1.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\cylinder\\cylinder1.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\cylinder\\cylinder1.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\cylinder\\cylinder1.cpp",
+              "RelativeToolTip": "robot\\objects\\cylinder\\cylinder1.cpp",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowFEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-21T07:15:16.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "cylinder.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\cylinder\\cylinder.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\cylinder\\cylinder.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\cylinder\\cylinder.cpp",
+              "RelativeToolTip": "robot\\objects\\cylinder\\cylinder.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-21T07:12:41.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "cube.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\objects\\cube\\cube.cpp",
+              "RelativeDocumentMoniker": "robot\\objects\\cube\\cube.cpp",
+              "ToolTip": "D:\\robot\\robot\\objects\\cube\\cube.cpp",
+              "RelativeToolTip": "robot\\objects\\cube\\cube.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-07T16:15:22.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\robot\\robot\\main.cpp",
+              "RelativeDocumentMoniker": "robot\\main.cpp",
+              "ToolTip": "D:\\robot\\robot\\main.cpp*",
+              "RelativeToolTip": "robot\\main.cpp*",
+              "ViewState": "AgIAALgAAAAAAAAAAAAAAMIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-07T14:27:53.291Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
