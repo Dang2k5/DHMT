@@ -116,16 +116,6 @@ void makeCylinder1() {
 }
 
 
-//void makeColorPlane()
-//{
-//	cylinder1_quad1(1, 0, 3, 2);
-//	plane_quad(2, 3, 7, 6);
-//	plane_quad(3, 0, 4, 7);
-//	plane_quad(6, 5, 1, 2);
-//	plane_quad(4, 5, 6, 7);
-//	plane_quad(5, 4, 0, 1);
-//}
-
 GLuint cylinder1_VAO, cylinder1_VBO;
 
 void initCylinder1Buffers()

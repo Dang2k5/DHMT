@@ -1,11 +1,12 @@
 ﻿#include "objects/robot1.h"
 
 vec3 robot1_rotate(0,0,0), robot1_position(0,0,0);
-GLfloat vai = 0.0f, dau = 0.0f, hz = 0.0f;
-GLfloat khuyu = 0.0f, ly = 0.0f, lz = 0.0f;
-GLfloat cotay = 0.0f, ngon = 0.0f, rz = 0.0f;
+GLfloat vaiX = 0.0f, vaiZ = 0.0f, dau = 0.0f;
+GLfloat khuyuX = 0.0f, khuyuZ = 0.0f;
+GLfloat cotay = 0.0f, ngon = 0.0f;
 GLfloat armSwing = 0.0f, legSwing = 0.0f;
 bool swingForward = true;
+bool enableAutoMotion = false;
 
 
 void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
@@ -13,12 +14,11 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 		rotation += robot1_rotate;
 		position += robot1_position;
 	}
-	
-
-	color bodyColor = color(0.7f, 0.7f, 0.75f); // xám kim loại
-	color jointColor = color(0.5f, 0.5f, 0.55f); // xám đậm hơn, dùng cho khớp nối
-	color eyeColor = color(0.0f, 0.8f, 1.0f);  // xanh ngọc sáng, cho mắt
-	color accentColor = color(1.0f, 0.4f, 0.0f);  // cam, cho chi tiết nhỏ hoặc đường viền
+	color bodyColor = color(1.0f, 0.0f, 0.0f, 1); // đỏ
+	color jointColor = color(0.0f, 0.0f, 0.0f, 1); // đen
+	color eyeColor = color(1.0, 0.2, 0.2, 1);  // xanh ngọc sáng, cho mắt
+	color accentColor = color(0.2, 0.2, 0.2, 1); // xám đậm
+	color swordColor = color(0.2f, 0.2f, 0.2f, 1); // xám đen
 
 	mat4 globalTransformMatrix = cylinderTransform(position, rotation, scale);
 	cylinder1TransformMatrix(globalTransformMatrix);
@@ -26,7 +26,16 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	cubeTransformMatrix(globalTransformMatrix);
 
 	//body
-	drawCylinder(vec3(0, 0, 0), vec3(0, 0, 0), vec3(2, 3, 1.5), bodyColor);
+	drawSphere(vec3(0, 0.3, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, 0.6, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, 0.9, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, 1.2, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, 1.5, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, 0, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, -0.3, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, -0.6, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	drawSphere(vec3(0, -0.9, 0), vec3(0, 0, 0), vec3(2.5, 0.6, 1.8), jointColor);
+	
 
 	//neck
 	drawCylinder(vec3(0, 1.7, 0), vec3(0, 120, 0), vec3(0.6, 0.4, 1.5), jointColor);
@@ -34,51 +43,59 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	drawCylinder(vec3(0, 1.7, 0), vec3(0, -120, 0), vec3(0.6, 0.4, 1.5), jointColor);
 
 	//head
-	mat4 head = globalTransformMatrix * TRS(vec3(0, 2.9, 0), vec3(0, dau, 0), vec3(1, 1, 1)); // quay đầu sang ngang
+	mat4 head = globalTransformMatrix * (enableInput ? Angel::RotateY(dau) : identity()) * TRS(vec3(0, 2.7, 0), vec3(0, 0, 0), vec3(1, 1, 1)); // quay đầu sang ngang
 	cubeTransformMatrix(head);
 	sphereTransformMatrix(head);
 	cylinderTransformMatrix(head);
-	drawCube(vec3(0, 0, 0), vec3(0,0,0), vec3(2, 2, 1.5), bodyColor);
+	//nón
+	drawCylinder(vec3(0, 1, 0), vec3(0,0,0), vec3(1, 0.5, 1), bodyColor);
+	drawSphere(vec3(0, 0.6, 0), vec3(0,0,0), vec3(3, 0.4, 1), bodyColor);
+	drawSphere(vec3(0, 0, 0), vec3(0, 0, 0), vec3(2, 1, 1), bodyColor);
+	drawSphere(vec3(0, 0, 0.48), vec3(0,0,0), vec3(0.2, 0.3, 0.05), color(1.0f, 0.8f, 0.6f, 1.0f));
+	drawSphere(vec3(0, 0.2, 0.45), vec3(0, 0, 0), vec3(2, 0.2, 0.05), jointColor);
+	// cổ
+	drawCylinder(vec3(0, -0.6, 0), vec3(0, 90, 0), vec3(0.8, 0.4, 1), bodyColor);
+
+	// trán
+	drawCube(vec3(0, 0.4, 0), vec3(0, 0, 0), vec3(1.5f, 0.2f, 0.8), bodyColor);
+
+	// tai
+	drawSphere(vec3(-0.8, 0, 0), vec3(-90, 0, 0), vec3(0.2f, 1, 1), bodyColor);
+	drawSphere(vec3(0.8, 0, 0), vec3(90, 0, 0), vec3(0.2f, 1, 1), bodyColor);
 
 	// Mắt - hai hình cầu nhỏ phía trước đầu
-	drawSphere(vec3(-0.4, 0.2, 0.8), vec3(0, 0, 0), vec3(0.4f, 0.2f, 0.4f), eyeColor);
-	drawSphere(vec3(0.4, 0.2, 0.8), vec3(0, 0, 0), vec3(0.4f, 0.2f, 0.4f), eyeColor);
+	drawSphere(vec3(-0.4, 0.2, 0.3), vec3(0, 0, 0), vec3(0.4f, 0.2f, 0.4f), eyeColor);
+	drawSphere(vec3(0.4, 0.2, 0.3), vec3(0, 0, 0), vec3(0.4f, 0.2f, 0.4f), eyeColor);
 
 
 	// Miệng - hình hộp dẹt
-	drawCube(vec3(0, -0.4, 0.8), vec3(0, 0, 0), vec3(1.0f, 0.2f, 0.1f), accentColor);
-	drawCube(vec3(0, -0.6, 0.8), vec3(0, 0, 0), vec3(1.0f, 0.2f, 0.1f), accentColor);
-
-	// Anten - trụ và quả cầu trên đỉnh đầu
-	// trái
-	
-	drawCylinder(vec3(-0.75, 1.1, 0), vec3(0, 0, 0), vec3(0.1f, 0.8f, 0.1f), bodyColor);
-	drawSphere(vec3(-0.75, 1.9, 0), vec3(0, 0, 0), vec3(0.25f, 0.25f, 0.25f), eyeColor);
-	// phải
-	drawCylinder(vec3(0.75, 1.1, 0), vec3(0, 0, 0), vec3(0.1f, 0.8f, 0.1f), bodyColor);
-	drawSphere(vec3(0.75, 1.9, 0), vec3(0, 0, 0), vec3(0.25f, 0.25f, 0.25f), eyeColor);
+	drawSphere(vec3(0, -0.1, 0.5), vec3(0, 0, 0), vec3(1.0f, 0.2f, 0.02f), accentColor);
+	drawCube(vec3(0, -0.1, 0.5), vec3(0, 0, 0), vec3(0.8f, 0.1f, 0.02f), WHITE);
 
 	//left arm
 	cylinderTransformMatrix(globalTransformMatrix);
 	sphereTransformMatrix(globalTransformMatrix);
-	mat4 leftarm = globalTransformMatrix * TRS(vec3(-1.2, 1.5, 0), vec3(-vai, 0, 0), vec3(1,1,1));
-	cylinderTransformMatrix(leftarm);
+	mat4 leftarm = globalTransformMatrix * TRS(vec3(-1.2, 1.5, 0), vec3(0, 0, 0), vec3(1, 1, 1)) 
+		* (enableInput ? Angel::RotateX(-armSwing) * RotateZ(-vaiZ) : identity());
+		cylinderTransformMatrix(leftarm);
 	sphereTransformMatrix(leftarm);
 	cubeTransformMatrix(leftarm);
-	drawCylinder(vec3(0, -0.75, 0), vec3(0, 0, -30), vec3(0.4, 1.5, 0.4), bodyColor);
+	drawCylinder(vec3(0, -0.75, 0), vec3(0, 0, -30), vec3(1, 1.5, 0.5), bodyColor);
 	//khuỷu
 	drawSphere(vec3(-0.75 * sin(radians(30.0f)),-0.75 -0.75 * cos(radians(30.0f)), 0),
 		vec3(0, 0, 0), vec3(0.4, 0.4, 0.4), jointColor);
 
-	mat4 elbowLeft = leftarm * TRS(vec3(-0.675, -1.9, 0), vec3(-khuyu, 0, 0), vec3(1, 1, 1));
+	mat4 elbowLeft = leftarm * TRS(vec3(-0.675, -1.4, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+		* (enableInput ? Angel::RotateX(-khuyuX) * Angel::RotateZ(-khuyuZ) : identity());
 	cylinderTransformMatrix(elbowLeft);
 
-	drawCylinder(vec3(0, 0, 0), vec3(0, 0, -30), vec3(0.3, 1, 0.3), bodyColor);
+	drawCylinder(vec3(0, -0.5, 0), vec3(0, 0, -30), vec3(0.6, 1.2, 0.3), bodyColor);
 	
 
 	//hand
 	// Cổ tay (khớp nối với cẳng tay)
-	mat4 wristLeft = elbowLeft * TRS(vec3(-0.3, -0.5, 0), vec3(-cotay, 0, 0), vec3(1, 1, 1));
+	mat4 wristLeft = elbowLeft * TRS(vec3(-0.3, -1, 0), vec3(-0, 0, 0), vec3(1, 1, 1))
+		* (enableInput ? Angel::RotateX(-cotay) : identity());
 	sphereTransformMatrix(wristLeft);
 	drawSphere(vec3(0, 0, 0), vec3(0, 0, 30), vec3(0.4, 0.4, 0.4), jointColor);
 
@@ -87,30 +104,41 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	cubeTransformMatrix(handLeft);
 	drawCube(vec3(0, 0, 0.0), vec3(0, 0, 60), vec3(0.6, 0.2, 1), bodyColor);
 	// Ngón tay
-	mat4 fingersLeft = handLeft * TRS(vec3(-0.1f, -0.3f, 0), vec3(0, 0, 0), vec3(1, 1, 1));
+	mat4 fingersLeft = handLeft * TRS(vec3(-0.1f, -0.3f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+		* (enableInput ? Angel::RotateZ(ngon) : identity());
 	cylinderTransformMatrix(fingersLeft);
 	for (int i = 0; i < 5; i++) {
 		float zOffset = -0.4 + i * 0.2f;
 		drawCylinder(vec3(0, 0, zOffset), vec3(0, 0, 0), vec3(0.2, 0.5, 0.15), jointColor);
 		drawCylinder(vec3(0.1, -0.15, zOffset), vec3(0, 0, 90), vec3(0.2, 0.3, 0.15), jointColor);
 	}
+
+	mat4 kiem = fingersLeft * TRS(vec3(0, 0, 0), vec3(90, 90, -90), vec3(1, 1, 1));
+	cylinderTransformMatrix(kiem);
+	sphereTransformMatrix(kiem);
+	drawCylinder(vec3(-0.5, 0, 0), vec3(0, 0, 0), vec3(1, 0.2, 0.2), swordColor);
+	drawCylinder(vec3(-0.5, 0, 0), vec3(0, 0, 90), vec3(2, 0.2, 0.1), swordColor);
+	drawSphere(vec3(-2, 0, 0), vec3(0, 0, 0), vec3(6, 0.5f, 0.05f), swordColor);
 	
 
 	//right arm (cánh tay phải)
-	mat4 rightarm = globalTransformMatrix * TRS(vec3(1.2, 1.5, 0), vec3(vai, 0, 0), vec3(1,1,1));
+	mat4 rightarm = globalTransformMatrix * TRS(vec3(1.2, 1.5, 0), vec3(0, 0, 0), vec3(1,1,1))
+		* (enableInput ? Angel::RotateX(armSwing) * Angel::RotateZ(vaiZ) : identity());
 	cylinderTransformMatrix(rightarm);
 	sphereTransformMatrix(rightarm);
 	cubeTransformMatrix(rightarm);
-	drawCylinder(vec3(0, -0.75, 0), vec3(0, 0, 30), vec3(0.4, 1.5, 0.4), bodyColor);
+	drawCylinder(vec3(0, -0.75, 0), vec3(0, 0, 30), vec3(1, 1.5, 0.5), bodyColor);
 	//khuỷu
 	drawSphere(vec3(0.75 * sin(radians(30.0f)), -0.75 - 0.75 * cos(radians(30.0f)), 0),
 		vec3(0, 0, 0), vec3(0.4, 0.4, 0.4), jointColor);
-	mat4 elbowRight = rightarm * TRS(vec3(0.675, -1.9, 0), vec3(-khuyu, 0, 0), vec3(1, 1, 1));
+	mat4 elbowRight = rightarm * TRS(vec3(0.675, -1.4, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+		* (enableInput ? Angel::RotateX(khuyuX) * Angel::RotateZ(khuyuZ) : identity());
 	cylinderTransformMatrix(elbowRight);
-	drawCylinder(vec3(0, 0, 0), vec3(0, 0, 30), vec3(0.3, 1, 0.3), bodyColor);
+	drawCylinder(vec3(0, -0.5, 0), vec3(0, 0, 30), vec3(0.6, 1.2, 0.3), bodyColor);
 
 	// cổ tay
-	mat4 wristRight = elbowRight * TRS(vec3(0.3, -0.5, 0), vec3(cotay, 0, 0), vec3(1, 1, 1));
+	mat4 wristRight = elbowRight * TRS(vec3(0.3, -1, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+		* (enableInput ? Angel::RotateX(cotay) : identity());
 	sphereTransformMatrix(wristRight);
 	drawSphere(vec3(0, 0, 0), vec3(0, 0, 30), vec3(0.4, 0.4, 0.4), jointColor);
 	// bàn tay
@@ -118,7 +146,8 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	cubeTransformMatrix(handRight);
 	drawCube(vec3(0, 0, 0.0f), vec3(0, 0, -60), vec3(0.6, 0.2, 1), bodyColor);
 	// ngón tay
-	mat4 fingersRight = handRight * TRS(vec3(0.1f, -0.3f, 0), vec3(0, 0, 0), vec3(1, 1, 1));
+	mat4 fingersRight = handRight * TRS(vec3(0.1f, -0.3f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+		* (enableInput ? Angel::RotateZ(ngon) : identity());
 	cylinderTransformMatrix(fingersRight);
 	for (int i = 0; i < 5; i++) {
 		float zOffset = 0.4 - i * 0.2f;
@@ -130,31 +159,40 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	sphereTransformMatrix(globalTransformMatrix);
 
 	//hip
-	drawSphere(vec3(0, -1.6, 0), vec3(0,0,0), vec3(2, 1, 1.5), jointColor);
+	drawSphere(vec3(0, -1.6, 0), vec3(0,0,0), vec3(2, 1, 2), jointColor);
 	//right leg
-	mat4 rightleg = globalTransformMatrix * TRS(vec3(0.5, -2.6, 0), vec3(legSwing, 0, 0), vec3(1, 1, 1));
+	mat4 rightleg = globalTransformMatrix * (enableInput ? Angel::RotateX(legSwing) : identity())
+		* TRS(vec3(0.5, -2.6, 0), vec3(0, 0, 0), vec3(1, 1, 1));
 	cylinderTransformMatrix(rightleg);
 	sphereTransformMatrix(rightleg);
 	cylinder1TransformMatrix(rightleg);
 	drawCylinder(vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 2, 1), bodyColor);
-	drawSphere(vec3(0, -0.95, 0), vec3(90, 0, 0), vec3(0.8, 0.6, 0.6), jointColor);
+	drawSphere(vec3(0, -1.1, 0), vec3(90, 0, 0), vec3(0.8, 0.6, 0.6), jointColor);
 	drawCylinder(vec3(0, -2.6, 0), vec3(0, 0, 0), vec3(0.6, 3, 0.7), bodyColor);
 	//foot
 	drawCylinder1(vec3(0, -3.9, 0.5), vec3(0, 0, 0), vec3(0.8, 0.4, 1.5), bodyColor);
 
 
 	//left leg
-	mat4 leftleg = globalTransformMatrix * TRS(vec3(-0.5, -2.6, 0), vec3(-legSwing, 0, 0), vec3(1, 1, 1));
+	mat4 leftleg = globalTransformMatrix * (enableInput ? Angel::RotateX(-legSwing) : identity())
+		* TRS(vec3(-0.5, -2.6, 0), vec3(0, 0, 0), vec3(1, 1, 1));
 	cylinderTransformMatrix(leftleg);
 	sphereTransformMatrix(leftleg);
 	cylinder1TransformMatrix(leftleg);
 	drawCylinder(vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 2, 1), bodyColor);
-	drawSphere(vec3(0, -0.95, 0), vec3(90, 0, 0), vec3(0.8, 0.6, 0.6), jointColor);
+	drawSphere(vec3(0, -1.1, 0), vec3(90, 0, 0), vec3(0.8, 0.6, 0.6), jointColor);
 	drawCylinder(vec3(0, -2.6, 0), vec3(0, 0, 0), vec3(0.6, 3, 0.7), bodyColor);
 	//foot
 	drawCylinder1(vec3(0, -3.9, 0.5), vec3(0, 0, 0), vec3(0.8, 0.4, 1.5), bodyColor);
+
+	cylinderReset();
+	cylinder1Reset();
+	sphereReset();
+	cubeReset();
 }
 void updateRobotMotion() {
+	if(!enableAutoMotion) return;
+
 	float speed = 0.5f; // tốc độ vung tay chân
 	if (swingForward) {
 		armSwing += speed;
@@ -167,6 +205,7 @@ void updateRobotMotion() {
 		if (armSwing < -30.0f) swingForward = true;
 	}
 }
+
 void Robot1Keyboard(unsigned char key, int x, int y) {
 	switch (key){
 		case 'a':
@@ -196,31 +235,48 @@ void Robot1Keyboard(unsigned char key, int x, int y) {
 			if (dau < -30) dau = -30;
 			break;
 		case 'j':
-			khuyu += 2;
-			if (khuyu > 60) khuyu = 60;
+			khuyuX += 2;
+			if (khuyuX > 60) khuyuX = 60;
 			break;
 		case 'J':
-			khuyu -= 2;
-			if (khuyu < -60) khuyu = -60;
+			khuyuX -= 2;
+			if (khuyuX < 0) khuyuX = 0;
 			break;
 		case 'k':
+			khuyuZ += 2;
+			if (khuyuZ > 30) khuyuZ = 30;
+			break;
+		case 'K':
+			khuyuZ -= 2;
+			if (khuyuZ < -30) khuyuZ = -30;
+			break;
+		case 'h':
 			cotay += 2;
 			if (cotay > 30) cotay = 30;
 			break;
-		case 'K':
+		case 'H':
 			cotay -= 2;
 			if (cotay < -30) cotay = -30;
 			break;
-		case 'b':
-			vai += 2;
-			if (vai > 60) vai = 60;
+		case 'm':
+			vaiZ += 2;
+			if (vaiZ > 60) vaiZ = 60;
 			break;
-		case 'B':
-			vai -= 2;
-			if (vai < -60) vai = -60;
+		case 'M':
+			vaiZ -= 2;
+			if (vaiZ < 0) vaiZ = 0;
+			break;
+		case 'i':
+			ngon += 2;
+			if (ngon > 45) ngon = 45;
+			break;
+		case 'I':
+			ngon -= 2;
+			if (ngon < -45) ngon = -45;
 			break;
 		case 'n':
-			glutDisplayFunc(updateRobotMotion);
+			enableAutoMotion = !enableAutoMotion;
+			break;
 		default:
 			break;
 	}

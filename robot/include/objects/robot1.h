@@ -8,6 +8,9 @@
 #include "cylinder1.h"
 
 
+
 void drawRobot1(const vec3 position, const vec3 rotation, const vec3 scale, bool enableInput = false);
+
+void updateRobotMotion();
 
 void Robot1Keyboard(unsigned char key, int x, int y);

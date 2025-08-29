@@ -126,7 +126,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="core\axes.cpp" />
     <ClCompile Include="core\camera.cpp" />
     <ClCompile Include="core\InitShader.cpp" />
     <ClCompile Include="core\lighting.cpp" />
@@ -136,26 +135,25 @@
     <ClCompile Include="core\ui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="objects\cabinet.cpp" />
+    <ClCompile Include="objects\cabinet1.cpp" />
     <ClCompile Include="objects\chair.cpp" />
     <ClCompile Include="objects\computer.cpp" />
     <ClCompile Include="objects\cube\cube.cpp" />
     <ClCompile Include="objects\cylinder\cylinder.cpp" />
-    <ClCompile Include="objects\hemisphere\hemisphere.cpp" />
     <ClCompile Include="objects\keyboard.cpp" />
     <ClCompile Include="objects\lamp.cpp" />
     <ClCompile Include="objects\mouse.cpp" />
-    <ClCompile Include="objects\planeStore.cpp" />
     <ClCompile Include="objects\cylinder\cylinder1.cpp" />
-    <ClCompile Include="objects\plane\plane.cpp" />
+    <ClCompile Include="objects\robot4.cpp" />
     <ClCompile Include="objects\RobotStore.cpp" />
     <ClCompile Include="objects\robot\robot1.cpp" />
     <ClCompile Include="objects\robot\robot2.cpp" />
+    <ClCompile Include="objects\robot\robot3.cpp" />
+    <ClCompile Include="objects\Salesman.cpp" />
     <ClCompile Include="objects\shelf.cpp" />
     <ClCompile Include="objects\sign.cpp" />
-    <ClCompile Include="objects\sphere\computer.cpp" />
     <ClCompile Include="objects\sphere\sphere.cpp" />
     <ClCompile Include="objects\table.cpp" />
-    <ClCompile Include="objects\testObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\core\Angel.h" />
@@ -166,24 +164,24 @@
     <ClInclude Include="include\core\ui.h" />
     <ClInclude Include="include\core\axes.h" />
     <ClInclude Include="include\core\camera.h" />
-    <ClInclude Include="include\core\environment.h" />
     <ClInclude Include="include\core\lighting.h" />
     <ClInclude Include="include\core\openGL.h" />
     <ClInclude Include="include\core\shaders.h" />
     <ClInclude Include="include\objects\cabinet.h" />
+    <ClInclude Include="include\objects\cabinet1.h" />
     <ClInclude Include="include\objects\chair.h" />
     <ClInclude Include="include\objects\computer.h" />
     <ClInclude Include="include\objects\cube.h" />
     <ClInclude Include="include\objects\cylinder.h" />
-    <ClInclude Include="include\objects\hemisphere.h" />
     <ClInclude Include="include\objects\keyboard.h" />
     <ClInclude Include="include\objects\lamp.h" />
     <ClInclude Include="include\objects\mouse.h" />
     <ClInclude Include="include\objects\cylinder1.h" />
-    <ClInclude Include="include\objects\plane.h" />
     <ClInclude Include="include\objects\planeStore.h" />
     <ClInclude Include="include\objects\robot1.h" />
     <ClInclude Include="include\objects\robot2.h" />
+    <ClInclude Include="include\objects\robot3.h" />
+    <ClInclude Include="include\objects\robot4.h" />
     <ClInclude Include="include\objects\RobotStore.h" />
     <ClInclude Include="include\objects\shelf.h" />
     <ClInclude Include="include\objects\sign.h" />
@@ -191,7 +189,6 @@
     <ClInclude Include="include\core\vec.h" />
     <ClInclude Include="include\core\stb_image.h" />
     <ClInclude Include="include\objects\table.h" />
-    <ClInclude Include="include\objects\testObject.h" />
     <ClInclude Include="object\include\cube.h" />
   </ItemGroup>
   <ItemGroup>

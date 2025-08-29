@@ -18,7 +18,6 @@ void drawLamp(vec3 position, vec3 rotation, vec3 scale, pointLight* lamp_light)
 
 	mat4 transform = cylinderTransform(position, rotation, scale);
 	sphereTransform(position, rotation, scale);
-	/*plane2Transform(position, rotation, scale);*/
 	cubeTransform(position, rotation, scale);
 
 	lamp_light->setTransformMatrix(transform * Translate(0, 0, 0));
@@ -27,7 +26,7 @@ void drawLamp(vec3 position, vec3 rotation, vec3 scale, pointLight* lamp_light)
 	drawCylinder(vec3(0, 2.55, 0), vec3(0, 0, 0), vec3(0.45, 0.02, 0.45), color(0.5, 0.5, 0.5, 1));
 
 	drawCylinder(vec3(0, 1.8, 0), vec3(0, 0, 0), vec3(0.05, 1.5, 0.05), metalColor);
-	//drawSphere(vec3(0, 1.05, 0), vec3(), vec3(0.08, 0.08, 0.08), metalColor); 
+	/*drawSphere(vec3(0, 1.05, 0), vec3(), vec3(0.08, 0.08, 0.08), metalColor); */
 
 	drawCylinder(vec3(0, 0.85, 0), vec3(0, 0, 0), vec3(0.35, 0.4, 0.35), lampColor);
 	drawCylinder(vec3(0, 0.4, 0), vec3(0, 0, 0), vec3(0.38, 0.025, 0.38), color(0.1, 0.1, 0.1, 1));
@@ -40,15 +39,10 @@ void drawLamp(vec3 position, vec3 rotation, vec3 scale, pointLight* lamp_light)
 	drawSphere(vec3(0, 0.5, 0), vec3(), vec3(0.6, 0.6, 0.6), lamp_light->diffuse, engine::emissionShader);
 
 	drawCube(vec3(0, 1.2, 0), vec3(0, 0, 0), vec3(.4, .1, .4), vec4(0, 0, 0, 1));
-	/*drawPlane2(vec3(0, .8, .41), vec3(60, 0, 0), vec3(1, .1, 1), vec4(0, 0, 0, 1));
-	drawPlane2(vec3(0, .8, -.41), vec3(120, 0, 0), vec3(1, .1, 1), vec4(0, 0, 0, 1));
-	drawPlane2(vec3(-.41, .8, 0), vec3(90, -30, 90), vec3(1, .1, 1), vec4(0, 0, 0, 1));
-	drawPlane2(vec3(.41, .8, 0), vec3(90, 30, 90), vec3(1, .1, 1), vec4(0, 0, 0, 1));*/
 
 	sphereReset();
 	cylinderReset();
 	cubeReset();
-	/*plane2Reset();*/
 
 }
 

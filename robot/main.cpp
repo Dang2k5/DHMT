@@ -1,9 +1,8 @@
-//include core engine
+﻿//include core engine
 
 #include <core/openGL.h>		// open gl and utilities
 #include <core/camera.h>		// camera
 #include <core/shaders.h>		// shaders
-#include <core/environment.h>	// environment
 #include <core/lighting.h>		// lighting
 #include <core/ui.h>			// user interface
 
@@ -15,21 +14,23 @@
 
 //robot
 #include "objects/robot1.h"	// robot 1
-
+#include "objects/robot2.h"	// robot 2
+#include "objects/robot3.h"	// robot 3
+#include "objects/robot4.h"	// robot 4
 
 //scene objects
 #include "objects/shelf.h"	
 #include "objects/computer.h"	
-#include "objects/cabinet.h"	
+#include "objects/cabinet.h"
+#include "objects/cabinet1.h"
 #include "objects/table.h"	
 #include "objects/lamp.h"
 #include "objects/chair.h"
 #include "objects/sign.h"
-#include "objects/testObject.h"
 #include "objects/RobotStore.h"
 #include "objects/keyboard.h"
 #include "objects/mouse.h"
-
+#include "objects/Salesman.h"
 
 
 using namespace engine;
@@ -38,13 +39,8 @@ using namespace std;
 ui::button btnDay;
 ui::button btnNight;
 ui::button btnSunset;
-ui::button btnAxes;
-bool enableAxes = true;
 
-void toggleAxes()
-{
-	enableAxes = !enableAxes;
-}
+
 
 //DAY TIME PROTOTYPE FUNCS
 void day();
@@ -74,7 +70,7 @@ void onGUI()
 {
 	glColor3f(1.0, 1.0, 1.0);
 
-	ui::text2D("Render Engine", 10, 10, ui::window_height - 20, color(1, 1, 0, 1));
+	ui::text2D("Robot Store", 10, 10, ui::window_height - 20, color(1, 1, 0, 1));
 
 	ui::text2D("middle mouse - zoom in/out", 14, 10, ui::window_height - 50);
 	ui::text2D("left mouse - rotate camera", 14, 10, ui::window_height - 70);
@@ -83,11 +79,9 @@ void onGUI()
 	//ui::text2D("d - move right", 10, 10, ui::window_height - 70);
 	//ui::text2D("w - move right", 10, 10, ui::window_height - 80);
 
-	btnAxes = ui::button2D("Axes", 14, 80, 40, ui::window_width - 90, ui::window_height - 50, color(1, 1, 0, 1), color(0, 0, 0, 1));
 	btnDay = ui::button2D("Day", 14, 80, 40, ui::window_width - 90, ui::window_height - 100, color(.9f, .9f, .9f, 1), color(0, 0, 0, 1));
 	btnNight = ui::button2D("Night", 14, 80, 40, ui::window_width - 90, ui::window_height - 150, color(.1f, .1f, .1f, 1), color(1, 1, 1, 1));
 	btnSunset = ui::button2D("Sunset", 14, 80, 40, ui::window_width - 90, ui::window_height - 200, color(.5f, 0, 0, 1), color(1, 1, 0, 1));
-	btnAxes.onClick = toggleAxes;
 	btnDay.onClick = day;
 	btnNight.onClick = night;
 	btnSunset.onClick = sunset;
@@ -135,8 +129,8 @@ void setupLights()
 
 void day()
 {
-	sun_light->ambient =
-		sun_light->diffuse =
+	sun_light->ambient = /*color3(0.2f, 0.2f, 0.22f);*/
+		sun_light->diffuse = /*color3(1.0f, 1.0f, 1.0f);*/
 		sun_light->specular = color3(.9f, .9f, .9f);
 }
 
@@ -171,7 +165,6 @@ void setUpCam()
 
 void initialize_before_display()
 {
-	engine::initEnvironment();
 	engine::initDefaultShaders();
 	setupLights();
 	setUpCam();
@@ -185,89 +178,86 @@ void initialize_before_display()
 void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
-	/*glClearColor(1.0f, 1.0f, 1.0f, 1.0f);*/
+	/*glClearColor(0.2f, 0.2f, 0.2f, 1.0f);*/
+	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	glEnable(GL_DEPTH_TEST);
+
+	drawLamp(vec3(-32, 45, 20), vec3(), vec3(5, 5, 5), lamp_light_1);
+
+	drawLamp(vec3(32, 45, 20), vec3(), vec3(5, 5, 5), lamp_light_2);
+
+	drawLamp(vec3(0, 45, 0), vec3(), vec3(5, 5, 5), lamp_light_3);
+
+	drawRobotStore(vec3(0, 0, 0), vec3(), vec3(1.5, 1.5, 1.5));
+
+	drawCabinet1(vec3(-42, 5, 18.5), vec3(0, 90, 0), vec3(25, 20, 30), false);
+
+	drawTable(vec3(-22, 13, 17), vec3(0, -90, 0), vec3(25, 20, 20));
+
+	drawSalesman(vec3(-32, 17, 17), vec3(0, 0, 0), vec3(8, 8, 8), true);
+
+	drawComputer(vec3(-21, 17, 17), vec3(0, 180, 0), vec3(10, 10, 10));
+
+	drawKeyboard(vec3(-24.5, 13.8, 17), vec3(0, -90, 0), vec3(5, 5, 5));
+
+	drawMouse(vec3(-24.5, 13.8, 24), vec3(0, -90, 0), vec3(5, 5, 5));
+
+	drawTable(vec3(32, 13, 13), vec3(0, 180, 0), vec3(25, 20, 20));
+
+	drawChair(vec3(32, 3, 25), vec3(0, 180, 0), vec3(8, 12, 8));
+
+	drawCabinet(vec3(-42, 13, -15), vec3(0, 90, 0), vec3(30, 20, 30), true);
+
+
+
+	drawRobot1(vec3(30, 40, -27), vec3(0, 0, 0), vec3(4, 4, 4), false);
+
+	drawRobot2(vec3(-10, 17, -27), vec3(0, 0, 0), vec3(4, 4, 4), false);
+
+	drawRobot3(vec3(10, 20, -27), vec3(0, 0, 0), vec3(1.5, 1.5, 1.5), false);
+
+	drawRobot4(vec3(0, 20, -27), vec3(0, 0, 0), vec3(1.5, 1.5, 1.5), false);
+	
+	
+	drawRobot1(vec3(-40, 21, 9), vec3(0, -90, 0), vec3(2, 0.8, 1.5), false);
+	drawRobot1(vec3(-40, 21, 13), vec3(0, -90, 0), vec3(2, 0.8, 1.5), false);
+	drawRobot1(vec3(-40, 21, 17), vec3(0, -90, 0), vec3(2, 0.8, 1.5), false);
+	drawRobot1(vec3(-40, 21, 21), vec3(0, -90, 0), vec3(2, 0.8, 1.5), false);
+	drawRobot1(vec3(-40, 21, 25), vec3(0, -90, 0), vec3(2, 0.8, 1.5), false);
+	drawRobot1(vec3(-40, 21, 29), vec3(0, -90, 0), vec3(2, 0.8, 1.5), false);
+
+
 	
 
-	drawRobot1(vec3(0, 0, 0), vec3(0, 0, 0), vec3(8, 8, 8));
-
-	drawLamp(vec3(-32, 35, 20), vec3(), vec3(5, 5, 5), lamp_light_1);
-
-	drawLamp(vec3(32, 35, 20), vec3(), vec3(5, 5, 5), lamp_light_2);
-
-	drawLamp(vec3(0, 35, 0), vec3(), vec3(5, 5, 5), lamp_light_3);
-
-	drawRobot1(vec3(10, 76, 0), vec3(10, 150, -10), vec3(3, 2, 1.5));
+	drawRobot2(vec3(-40, 29, 7), vec3(0, 90, 0), vec3(2, 2, 2), false);
+	drawRobot2(vec3(-40, 29, 11), vec3(0, 90, 0), vec3(2, 2, 2), false);
+	drawRobot2(vec3(-40, 29, 15), vec3(0, 90, 0), vec3(2, 2, 2), false);
+	drawRobot2(vec3(-40, 29, 19), vec3(0, 90, 0), vec3(2, 2, 2), false);
 
 
-	drawPlaneStore(vec3(0, 0, 0), vec3(), vec3(1.5, 1.2, 1.5));
+	drawRobot2(vec3(-40, 17, -10), vec3(0, 90, 0), vec3(3, 3, 3), false);
+	drawRobot2(vec3(-40, 27, -25), vec3(0, 90, 0), vec3(3, 3, 3), false);
+	drawRobot2(vec3(-40, 38, -25), vec3(0, 90, 0), vec3(3, 3, 3), false);
 
-	drawTable(vec3(-32, 13, 20), vec3(0, -90, 0), vec3(25, 20, 20));
 
-	drawTable(vec3(30, 13, 20), vec3(0, 90, 0), vec3(25, 20, 20));
+	
 
-	drawChair(vec3(40, 3, 21), vec3(0, -90, 0), vec3(8, 12, 8));
-
-	drawComputer(vec3(-30.5, 17, 20), vec3(0, 180, 0), vec3(10, 10, 10));
-
-	drawKeyboard(vec3(-34.5, 13.8, 20), vec3(0, -90, 0), vec3(5, 5, 5));
-
-	drawMouse(vec3(-34.5, 13.8, 27), vec3(0, -90, 0), vec3(5, 5, 5));
-
-	drawCabinet(vec3(-41, 11, -17), vec3(0, 90, 0), vec3(25, 20, 30));
-
-	drawRobot1(vec3(-40, 15, -26.5), vec3(0, 0, 0), vec3(1, 1, 1));
-
-	if (selectedIndex == 1)
-		drawRobot1(vec3(30.5f, 20, 21), vec3(0, 90, 0), vec3(1, 1, 1), true);	//selected robot1
-
-	//drawAirplane1(vec3(-40, 15.5, -12), vec3(0, 0, -45), vec3(1.5, 2, 2));
-
-	//drawHelicopter(vec3(-40, 24, -8), vec3(0, 90, 0), vec3(10, 10, 10), true);
-
-	//drawHelicopter(vec3(-40, 24, -23), vec3(0, 90, 0), vec3(10, 10, 10), false);
-
-	//drawB52(vec3(-40, 32, -23.5), vec3(0, 90, 0), vec3(1, 1, 1));
-
-	//drawBiplane(vec3(-40, 34, -9), vec3(0, 0, 0), vec3(1.5, 1.5, 1.5));
+	if (selectedIndex == 1) 
+		drawRobot1(vec3(32, 28, 17), vec3(0, 0, 0), vec3(2, 2, 2), true);	//selected robot1
+	
 
 	if (selectedIndex == 2)
-		drawRobot1(vec3(30.5f, 15.0f, 21), vec3(0, 0, 0), vec3(1.0f, 1.0f, 1.0f), true);		//selected biplane
+		drawRobot2(vec3(32, 20, 13), vec3(0, 0, 0), vec3(5, 5, 5), true);;		//selected robot2
+	
+	if (selectedIndex == 3)
+		drawRobot3(vec3(32, 28, 17), vec3(0, 0, 0), vec3(2, 2, 2), true);	//selected helicopter
 
-	/*drawCabinet(vec3(15, 11, -26), vec3(0, 0, 0), vec3(55, 20, 30), true)*/; //cabinet
-
-	drawRobot1(vec3(-6, 15.5, -26), vec3(45, -90, 0), vec3(2, 2, 2));
-
-	drawRobot1(vec3(6, 15.5, -26), vec3(45, -90, 0), vec3(2, 2, 2));
-
-	//if (selectedIndex == 3)
-	//	drawHelicopter(vec3(30.5f, 15.75f, 21), vec3(0, 90, 0), vec3(9.0f, 9.0f, 9.0f), true, true);		//selected helicopter
-
-	//drawHelicopter(vec3(25, 14, -24), vec3(0, 45, 0), vec3(11, 11, 11), true);
-
-	//drawHelicopter(vec3(35, 14, -24), vec3(0, 45, 0), vec3(11, 11, 11), true);
-
-	//drawHelicopter(vec3(25, 24, -24), vec3(0, 45, 0), vec3(10, 10, 10), false);
-
-	//drawHelicopter(vec3(35, 24, -24), vec3(0, 45, 0), vec3(10, 10, 10), false);
-
-	//if (selectedIndex == 4)
-	//	drawB52(vec3(30.5f, 14.25f, 21), vec3(0, 90, 0), vec3(1.25f, 1.25f, 1.25f), true);		//selected b52
-
-	//drawB52(vec3(6, 24, -24.5), vec3(30, 10, 0), vec3(1.5, 1.5, 1.5));
-
-	//drawB52(vec3(-7, 24, -24.5), vec3(30, 10, 0), vec3(1.5, 1.5, 1.5));
-
-	//drawBiplane(vec3(0, 34, -24), vec3(0, -90, 0), vec3(1.5, 1.5, 1.5));
-
-	//drawBiplane(vec3(30, 34, -24), vec3(0, -90, 0), vec3(1.5, 1.5, 1.5));
-
-	/*drawSign(vec3(0, 57.4, 38), vec3(0, 0, 0), vec3(40, 15, 15), color(1, 1, 1, 1));*/
+	if (selectedIndex == 4)
+		drawRobot4(vec3(32, 28, 17), vec3(0, 0, 0), vec3(2, 2, 2), true);	//selected b52
 
 
-	//drawTestObject(vec3(0, 0, 0), vec3(), vec3(1, 1, 1));
 
+	drawSign(vec3(0, 73, 40), vec3(0, 0, 0), vec3(105, 20, 30), color(1, 1, 1, 1));
 
 	onGUI();
 
@@ -284,38 +274,42 @@ void timer(int value)
 	glutPostRedisplay();
 	glutTimerFunc(20, timer, value++);
 }
-
+void glutRobot1Motion(int value) {
+	updateRobotMotion();
+	glutPostRedisplay();
+	glutTimerFunc(16, glutRobot1Motion, 0); // khoảng 60 FPS
+}
 void input(unsigned char key, int mouseX, int mouseY)
 {
 	switch (key)
 	{
 	case '1':
-		selectedInfo = ">> robot1";
+		selectedInfo = ">> Robot1";
 		selectedIndex = 1;
-		selectedInputInfo = "q, e: rotate -  a,w,s,d, j,l";
+		selectedInputInfo = "q,e: xoay -  a,w,s,d: di chuyen - l,j,k,h,m,i: dieu khien canh tay - n: di bo";
 		break;
 	case '2':
-		selectedInfo = ">> robot2";
+		selectedInfo = ">> Robot2";
 		selectedIndex = 2;
-		selectedInputInfo = "q, e: rotate";
+		selectedInputInfo = "q, e: xoay";
 		break;
 	case '3':
-		selectedInfo = ">> robot3";
+		selectedInfo = ">> Robot3";
 		selectedIndex = 3;
-		selectedInputInfo = "q, e: rotate - x, X (shift + x): wing rotate";
+		selectedInputInfo = "q,e: xoay -  a,w,s,d: di chuyen";
 		break;
 	case '4':
-		selectedInfo = ">> robot4";
+		selectedInfo = ">> Robot4";
 		selectedIndex = 4;
-		selectedInputInfo = "q, e: rotate";
+		selectedInputInfo = "q,e: xoay -  a,w,s,d: di chuyen";
 		break;
 	case '5':
-		selectedInfo = ">> cabinet";
+		selectedInfo = ">> Cabinet";
 		selectedIndex = 5;
 		selectedInputInfo = "t, p: close - T (shift + t), p (shift + p): open";
 		break;
 	case '6':
-		selectedInfo = ">> robo";
+		selectedInfo = ">> Salesman";
 		selectedIndex = 6;
 		selectedInputInfo = "a d s w: move - q, e: rotate";
 		break;
@@ -326,8 +320,8 @@ void input(unsigned char key, int mouseX, int mouseY)
 		break;
 	case '0':
 	{
-		engine::setTargetPos(vec4(35.5f, 17.0f, 21.0f, 1));
-		engine::setCameraPos(vec4(41.5f, 19.5f, 21.0f, 1));
+		engine::setTargetPos(vec4(32, 28, 27, 1));
+		engine::setCameraPos(vec4(35, 30, 40, 1));
 
 		disableCamRot = !disableCamRot;
 
@@ -343,22 +337,22 @@ void input(unsigned char key, int mouseX, int mouseY)
 	switch (selectedIndex)
 	{
 	case 1:
-		Robot1Keyboard(key, mouseX, mouseY);
+		Robot1Keyboard(key, mouseX, mouseY); //Robot1 keyboard
 		break;
 	case 2:
-		/*biplaneKeyboard(key, mouseX, mouseY);*/
+		Robot2Keyboard(key, mouseX, mouseY); //Robot2 keyboard
 		break;
 	case 3:
-		/*helicopterKeyboard(key, mouseX, mouseY)*/;
+		Robot3Keyboard(key, mouseX, mouseY);//Robot3 keyboard
 		break;
 	case 4:
-		/*b52Keyboard(key, mouseX, mouseY);*/
+		Robot4Keyboard(key, mouseX, mouseY); //Robot4 keyboard
 		break;
 	case 5:
-		/*cabinetKeyboard(key, mouseX, mouseY);*/
+		cabinetKeyboard(key, mouseX, mouseY);
 		break;
 	case 6:
-		/*roboKeyboard(key, mouseX, mouseY);*/
+		SalesmanKeyboard(key, mouseX, mouseY);
 		break;
 	default:
 		selectedInputInfo = "";
@@ -381,7 +375,6 @@ void resharp(int w, int h)
 
 void mouse(int button, int state, int x, int y)
 {
-	btnAxes.onEvent(button, state, x, y);
 	btnDay.onEvent(button, state, x, y);
 	btnNight.onEvent(button, state, x, y);
 	btnSunset.onEvent(button, state, x, y);
@@ -419,7 +412,7 @@ int main(int argc, char** argv)
 	glEnable(GL_MULTISAMPLE);
 	glutInitWindowSize(840, 600);
 	glutInitWindowPosition(100, 80);
-	glutCreateWindow("Render Engine");
+	glutCreateWindow("Robot Store");
 
 	GLenum err = glewInit();
 	if (err != GLEW_OK) {
@@ -431,6 +424,8 @@ int main(int argc, char** argv)
 	glutReshapeFunc(resharp);
 	glutIdleFunc(idle);
 	glutTimerFunc(20, timer, 0);
+	glutTimerFunc(10, glutRobot1Motion, 0);
+	glutTimerFunc(10, glutRobot1Motion, 0);
 	glutKeyboardFunc(input);
 	glutMouseFunc(mouse);
 	glutMotionFunc(motion);
