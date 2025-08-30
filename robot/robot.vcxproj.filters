@@ -96,7 +96,10 @@
     <ClCompile Include="objects\robot\robot3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="objects\robot4.cpp">
+    <ClCompile Include="objects\robot\robot4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objects\robot\robot5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -203,9 +206,13 @@
     <ClInclude Include="include\objects\robot4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\objects\robot5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="objects\fShader.glsl" />
     <None Include="objects\vShader.glsl" />
+    <None Include="objects\cube\cube_fshader.glsl" />
   </ItemGroup>
 </Project>

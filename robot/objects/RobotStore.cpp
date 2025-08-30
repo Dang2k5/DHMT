@@ -16,7 +16,7 @@ void drawRobotStore(vec3 position, vec3 rotation, vec3 scale)
     color red = color(0.4, 0.2, 0.5, 1);               // Đỏ tím trầm (chuyển sang màu lạnh)
 
     // nền
-    drawCylinder(vec3(3, 2, 10), vec3(0, 0, 0), vec3(20, .1, 15), color2);
+    drawCylinder(vec3(0, 2, 10), vec3(0, 0, 0), vec3(20, .1, 15), color2);
 
 
     drawCube(vec3(0, 1.78, 0), vec3(0, 0, 0), vec3(65, .5, 45), color4);
@@ -55,7 +55,7 @@ void drawRobotStore(vec3 position, vec3 rotation, vec3 scale)
 
 
 	//be trung bay
-	drawCube(vec3(9, 5, -17), vec3(0, 0, 0), vec3(46, 5, 10), frameColor1); 
+	drawCube(vec3(7, 5, -17), vec3(0, 0, 0), vec3(48, 5, 10), frameColor1); 
 
     //hop do trong tu
 	drawCube(vec3(-28, 5, 15), vec3(0, 90, 0), vec3(10, 5, 5), color(1,1,0,1));

@@ -2,10 +2,9 @@
 
 vec3 robot2_rotate(0, 0, 0), robot2_position(0, 0, 0);
 GLfloat vai2 = 0.0f, dau2 = 0.0f;
-GLfloat khuyu2 = 0.0f, ly2 = 0.0f;
 GLfloat cotay2 = 0.0f, ngon2 = 0.0f;
 GLfloat armSwing2 = 0.0f, legSwing2 = 0.0f;
-bool swingForward2 = true;
+
 
 
 
@@ -43,7 +42,8 @@ void drawRobot2(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
     // === Cổ (Neck) ===
 
     // === Đầu (Head) ===
-    mat4 headTransform = globalTransformMatrix * TRS(vec3(0, 1.1f, 0), vec3(0, dau2, 0), vec3(1.4f, 1.2f, 1.2f));
+    mat4 headTransform = globalTransformMatrix * TRS(vec3(0, 1.1f, 0), vec3(0, 0, 0), vec3(1.4f, 1.2f, 1.2f)) 
+        * (enableInput ? Angel::RotateY(dau2) : identity());
     cubeTransformMatrix(headTransform);
     drawCube(vec3(0, 0, 0), vec3(0, 0, 0), vec3(1.0f, 1.0f, 1.0f), bodyColor);
 
@@ -86,29 +86,34 @@ void drawRobot2(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 
 
     // === Tay trái ===
-    mat4 leftArmTransform = globalTransformMatrix * TRS(vec3(-0.5f, 0.3f, 0), vec3(-vai2 - armSwing2, 0, 0), vec3(1, 1, 1));
+    mat4 leftArmTransform = globalTransformMatrix * TRS(vec3(-0.5f, 0.3f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+        * (enableInput ? Angel::RotateX(-armSwing2) * RotateZ(-vai2) : identity());
     cubeTransformMatrix(leftArmTransform);
     drawCube(vec3(0, -0.3f, 0), vec3(0, 0, 0), vec3(0.2f, 0.6f, 0.2f), bodyColor);
 
     // Bàn tay trái
-    mat4 handLeft = leftArmTransform * TRS(vec3(0, -0.6f, 0), vec3(0, 0, -cotay2), vec3(1, 1, 1));
+    mat4 handLeft = leftArmTransform * TRS(vec3(0, -0.6f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+        * (enableInput ? Angel::RotateZ(-cotay2) : identity());
     cubeTransformMatrix(handLeft);
     drawCube(vec3(0, 0.0f, 0), vec3(90, 0, 0), vec3(0.3f, 0.3f, 0.1f), bodyColor);
 
     // === Tay phải ===
-    mat4 rightArmTransform = globalTransformMatrix * TRS(vec3(0.5f, 0.3f, 0), vec3(vai2 + armSwing2, 0, 0), vec3(1, 1, 1));
+    mat4 rightArmTransform = globalTransformMatrix * TRS(vec3(0.5f, 0.3f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+        * (enableInput ? Angel::RotateX(armSwing2) * RotateZ(vai2) : identity());
     cubeTransformMatrix(rightArmTransform);
     drawCube(vec3(0, -0.3f, 0), vec3(0, 0, 0), vec3(0.2f, 0.6f, 0.2f), bodyColor);
 
     // Bàn tay phải
-    mat4 handRight = rightArmTransform * TRS(vec3(0, -0.6f, 0), vec3(0, 0, cotay2), vec3(1, 1, 1));
+    mat4 handRight = rightArmTransform * TRS(vec3(0, -0.6f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+        * (enableInput ? Angel::RotateZ(cotay2) : identity());
     cubeTransformMatrix(handRight);
     drawCube(vec3(0, 0.0f, 0), vec3(90, 0, 0), vec3(0.3f, 0.3f, 0.1f), bodyColor);
 
 
 
     // === Chân trái ===
-    mat4 leftLegTransform = globalTransformMatrix * TRS(vec3(-0.2f, -0.8f, 0), vec3(-legSwing2, 0, 0), vec3(1, 1, 1));
+    mat4 leftLegTransform = globalTransformMatrix * TRS(vec3(-0.2f, -0.8f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+        * (enableInput ? Angel::RotateX(-legSwing2) : identity());
     cubeTransformMatrix(leftLegTransform);
     drawCube(vec3(0, -0.12f, 0), vec3(0, 0, 0), vec3(0.3f, 0.6f, 0.3f), bodyColor);
 
@@ -117,27 +122,14 @@ void drawRobot2(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
     drawCube(vec3(0, 0.0f, 0.1f), vec3(-30, 0, 0), vec3(0.4f, 0.2f, 0.5f), bodyColor);
 
     // === Chân phải ===
-    mat4 rightLegTransform = globalTransformMatrix * TRS(vec3(0.2f, -0.8f, 0), vec3(legSwing2, 0, 0), vec3(1, 1, 1));
+    mat4 rightLegTransform = globalTransformMatrix * TRS(vec3(0.2f, -0.8f, 0), vec3(0, 0, 0), vec3(1, 1, 1))
+        * (enableInput ? Angel::RotateX(legSwing2) : identity());
     cubeTransformMatrix(rightLegTransform);
     drawCube(vec3(0, -0.12f, 0), vec3(0, 0, 0), vec3(0.3f, 0.6f, 0.3f), bodyColor);
 
     mat4 footRight = rightLegTransform * TRS(vec3(0, -0.5f, 0), vec3(0, 0, 0), vec3(1, 1, 1));
     cubeTransformMatrix(footRight);
     drawCube(vec3(0, 0.0f, 0.1f), vec3(-30, 0, 0), vec3(0.4f, 0.2f, 0.5f), bodyColor);
-}
-
-void updateRobot2Motion() {
-    float speed = 0.5f; // Speed of arm and leg swing
-    if (swingForward2) {
-        armSwing2 += speed;
-        legSwing2 -= speed;
-        if (armSwing2 > 30.0f) swingForward2 = false;
-    }
-    else {
-        armSwing2 -= speed;
-        legSwing2 += speed;
-        if (armSwing2 < -30.0f) swingForward2 = true;
-    }
 }
 
 void Robot2Keyboard(unsigned char key, int x, int y) {
@@ -168,14 +160,6 @@ void Robot2Keyboard(unsigned char key, int x, int y) {
         dau2 -= 2;
         if (dau2 < -30) dau2 = -30;
         break;
-    case 'j':
-        khuyu2 += 2;
-        if (khuyu2 > 60) khuyu2 = 60;
-        break;
-    case 'J':
-        khuyu2 -= 2;
-        if (khuyu2 < -60) khuyu2 = -60;
-        break;
     case 'k':
         cotay2 += 2;
         if (cotay2 > 30) cotay2 = 30;
@@ -190,10 +174,7 @@ void Robot2Keyboard(unsigned char key, int x, int y) {
         break;
     case 'B':
         vai2 -= 2;
-        if (vai2 < -60) vai2 = -60;
-        break;
-    case 'n':
-        updateRobot2Motion();
+        if (vai2 < 0) vai2 = 0;
         break;
     default:
         break;

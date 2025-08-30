@@ -16,11 +16,12 @@ D:\robot\robot\objects\keyboard.cpp;D:\robot\robot\x64\Debug\keyboard.obj
 D:\robot\robot\objects\lamp.cpp;D:\robot\robot\x64\Debug\lamp.obj
 D:\robot\robot\objects\mouse.cpp;D:\robot\robot\x64\Debug\mouse.obj
 D:\robot\robot\objects\cylinder\cylinder1.cpp;D:\robot\robot\x64\Debug\cylinder1.obj
-D:\robot\robot\objects\robot4.cpp;D:\robot\robot\x64\Debug\robot4.obj
+D:\robot\robot\objects\robot\robot4.cpp;D:\robot\robot\x64\Debug\robot4.obj
 D:\robot\robot\objects\RobotStore.cpp;D:\robot\robot\x64\Debug\RobotStore.obj
 D:\robot\robot\objects\robot\robot1.cpp;D:\robot\robot\x64\Debug\robot1.obj
 D:\robot\robot\objects\robot\robot2.cpp;D:\robot\robot\x64\Debug\robot2.obj
 D:\robot\robot\objects\robot\robot3.cpp;D:\robot\robot\x64\Debug\robot3.obj
+D:\robot\robot\objects\robot\robot5.cpp;D:\robot\robot\x64\Debug\robot5.obj
 D:\robot\robot\objects\Salesman.cpp;D:\robot\robot\x64\Debug\Salesman.obj
 D:\robot\robot\objects\shelf.cpp;D:\robot\robot\x64\Debug\shelf.obj
 D:\robot\robot\objects\sign.cpp;D:\robot\robot\x64\Debug\sign.obj

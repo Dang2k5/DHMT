@@ -9,8 +9,7 @@
 
 
 
-void drawRobot4(const vec3 position, const vec3 rotation, const vec3 scale, bool enableInput = false);
+void drawRobot5(const vec3 position, const vec3 rotation, const vec3 scale, bool enableInput = false);
 
 
-
-void Robot4Keyboard(unsigned char key, int x, int y);
+void Robot5Keyboard(unsigned char key, int x, int y); 

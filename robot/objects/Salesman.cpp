@@ -11,11 +11,13 @@ void drawSalesman(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 
 
 	mat4 globalTransformMatrix = sphereTransform(position, rotation, scale);
+	cubeTransformMatrix(globalTransformMatrix);
+	cylinderTransformMatrix(globalTransformMatrix);
 
 	color color1 = color(.2, .2, .2, 1);
 	color color2 = color(.7, .7, .7, 1);
 
-	drawSphere(vec3(.05, 0, 0), vec3(), vec3(.4, .4, .5), color(color1));
+	drawSphere(vec3(.05, 0, 0), vec3(), vec3(.5, .4, .5), color(color1));
 
 	drawSphere(vec3(.16, .0, -.11), vec3(), vec3(.15, .15, .15), color(color2));
 
@@ -26,6 +28,16 @@ void drawSalesman(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	drawSphere(vec3(0, -.6, 0), vec3(), vec3(.4, .8, .5), color(color1));
 
 	drawSphere(vec3(0, -.6, 0), vec3(), vec3(.45, .75, .55), color(color2));
+
+	drawSphere(vec3(.15, -.55, .25), vec3(0, -10, 30), vec3(.3, .6, .15), color(color2));
+
+	drawSphere(vec3(.15, -.55, -.25), vec3(0, 10, 45), vec3(.3, .6, .15), color(color2));
+
+	drawSphere(vec3(-.0, -1, 0.2), vec3(-15, 0, 0), vec3(.2, .8, .2), color(color2));
+
+	drawSphere(vec3(-.0, -1, -0.2), vec3(15, 0, 0), vec3(.2, .8, .2), color(color2));
+
+
 
 	sphereReset();
 }

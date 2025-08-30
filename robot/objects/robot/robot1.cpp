@@ -6,7 +6,7 @@ GLfloat khuyuX = 0.0f, khuyuZ = 0.0f;
 GLfloat cotay = 0.0f, ngon = 0.0f;
 GLfloat armSwing = 0.0f, legSwing = 0.0f;
 bool swingForward = true;
-bool enableAutoMotion = false;
+bool enableAutoMotion1 = false;
 
 
 void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
@@ -43,7 +43,8 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	drawCylinder(vec3(0, 1.7, 0), vec3(0, -120, 0), vec3(0.6, 0.4, 1.5), jointColor);
 
 	//head
-	mat4 head = globalTransformMatrix * (enableInput ? Angel::RotateY(dau) : identity()) * TRS(vec3(0, 2.7, 0), vec3(0, 0, 0), vec3(1, 1, 1)); // quay đầu sang ngang
+	mat4 head = globalTransformMatrix * TRS(vec3(0, 2.7, 0), vec3(0, 0, 0), vec3(1, 1, 1)) 
+		* (enableInput ? Angel::RotateY(dau) : identity()); // quay đầu sang ngang
 	cubeTransformMatrix(head);
 	sphereTransformMatrix(head);
 	cylinderTransformMatrix(head);
@@ -86,7 +87,7 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 		vec3(0, 0, 0), vec3(0.4, 0.4, 0.4), jointColor);
 
 	mat4 elbowLeft = leftarm * TRS(vec3(-0.675, -1.4, 0), vec3(0, 0, 0), vec3(1, 1, 1))
-		* (enableInput ? Angel::RotateX(-khuyuX) * Angel::RotateZ(-khuyuZ) : identity());
+		* (enableInput ? Angel::RotateX(khuyuX) * Angel::RotateZ(-khuyuZ) : identity());
 	cylinderTransformMatrix(elbowLeft);
 
 	drawCylinder(vec3(0, -0.5, 0), vec3(0, 0, -30), vec3(0.6, 1.2, 0.3), bodyColor);
@@ -190,9 +191,8 @@ void drawRobot1(vec3 position, vec3 rotation, vec3 scale, bool enableInput) {
 	sphereReset();
 	cubeReset();
 }
-void updateRobotMotion() {
-	if(!enableAutoMotion) return;
-
+void updateRobot1Motion() {
+	if (!enableAutoMotion1) return;
 	float speed = 0.5f; // tốc độ vung tay chân
 	if (swingForward) {
 		armSwing += speed;
@@ -235,12 +235,12 @@ void Robot1Keyboard(unsigned char key, int x, int y) {
 			if (dau < -30) dau = -30;
 			break;
 		case 'j':
-			khuyuX += 2;
-			if (khuyuX > 60) khuyuX = 60;
+			khuyuX -= 2;
+			if (khuyuX < -30) khuyuX = -30;
 			break;
 		case 'J':
-			khuyuX -= 2;
-			if (khuyuX < 0) khuyuX = 0;
+			khuyuX += 2;
+			if (khuyuX > 0) khuyuX = 0;
 			break;
 		case 'k':
 			khuyuZ += 2;
@@ -275,7 +275,7 @@ void Robot1Keyboard(unsigned char key, int x, int y) {
 			if (ngon < -45) ngon = -45;
 			break;
 		case 'n':
-			enableAutoMotion = !enableAutoMotion;
+			enableAutoMotion1 = !enableAutoMotion1;
 			break;
 		default:
 			break;

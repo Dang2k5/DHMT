@@ -1,10 +1,10 @@
 ﻿  main.cpp
-D:\robot\robot\main.cpp(201,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\robot\robot\main.cpp(203,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\robot\robot\main.cpp(222,56): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\robot\robot\main.cpp(223,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\robot\robot\main.cpp(224,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\robot\robot\main.cpp(225,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\robot\robot\main.cpp(226,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\robot\robot\main.cpp(227,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(196,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(198,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(225,56): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(235,56): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(254,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(254,54): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(255,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\robot\robot\main.cpp(255,54): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   robot.vcxproj -> D:\robot\x64\Debug\robot.exe

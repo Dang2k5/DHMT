@@ -120,7 +120,7 @@ vec3 shading(vec3 lightDir, vec3 lightColor, vec3 lightDiffuse, vec3 lightSpecul
 	vec3 viewDir = normalize(viewPosition - FragPos);
 	vec3 reflectDir = reflect(-lightDir, normal); 
 
-	float specularStrength = 0.5f;
+	float specularStrength = 0.8f;
 	float shininess = 64;
 	float spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess);
 	vec3 specular = specularStrength * spec * lightSpecular;  

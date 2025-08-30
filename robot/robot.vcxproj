@@ -144,11 +144,12 @@
     <ClCompile Include="objects\lamp.cpp" />
     <ClCompile Include="objects\mouse.cpp" />
     <ClCompile Include="objects\cylinder\cylinder1.cpp" />
-    <ClCompile Include="objects\robot4.cpp" />
+    <ClCompile Include="objects\robot\robot4.cpp" />
     <ClCompile Include="objects\RobotStore.cpp" />
     <ClCompile Include="objects\robot\robot1.cpp" />
     <ClCompile Include="objects\robot\robot2.cpp" />
     <ClCompile Include="objects\robot\robot3.cpp" />
+    <ClCompile Include="objects\robot\robot5.cpp" />
     <ClCompile Include="objects\Salesman.cpp" />
     <ClCompile Include="objects\shelf.cpp" />
     <ClCompile Include="objects\sign.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="include\objects\robot2.h" />
     <ClInclude Include="include\objects\robot3.h" />
     <ClInclude Include="include\objects\robot4.h" />
+    <ClInclude Include="include\objects\robot5.h" />
     <ClInclude Include="include\objects\RobotStore.h" />
     <ClInclude Include="include\objects\shelf.h" />
     <ClInclude Include="include\objects\sign.h" />
@@ -192,6 +194,7 @@
     <ClInclude Include="object\include\cube.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="objects\cube\cube_fshader.glsl" />
     <None Include="objects\fShader.glsl" />
     <None Include="objects\vShader.glsl" />
   </ItemGroup>
